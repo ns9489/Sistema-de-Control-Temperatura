@@ -76,4 +76,6 @@ public class Alert {
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
     }
+
+
 }
