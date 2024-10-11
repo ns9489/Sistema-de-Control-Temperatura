@@ -2,8 +2,7 @@ package com.TempControl.persistence.service;
 
 import com.TempControl.domain.dto.AlertDTO;
 import com.TempControl.persistence.entity.Alert;
-import com.TempControl.persistence.mapper.AlertMapper;
-import com.TempControl.persistence.Repository.AlertRepository;
+import com.TempControl.persistence.AlertRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

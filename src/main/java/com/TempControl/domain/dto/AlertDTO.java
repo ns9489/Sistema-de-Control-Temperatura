@@ -4,18 +4,10 @@ public class AlertDTO {
 
     private Integer id;
     private String message;
-    private String creationTime;
-    private String location;
-    private Integer deviceId;
-    private Integer sensorId;
+    private String creation_time;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+// Getters and Setters
+    // ...
 
     public String getMessage() {
         return message;
@@ -25,37 +17,19 @@ public class AlertDTO {
         this.message = message;
     }
 
-    public String getCreationTime() {
-        return creationTime;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCreationTime(String creationTime) {
-        this.creationTime = creationTime;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getLocation() {
-        return location;
+    public String getCreation_time() {
+        return creation_time;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCreation_time(String creation_time) {
+        this.creation_time = creation_time;
     }
-
-    public Integer getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(Integer deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public Integer getSensorId() {
-        return sensorId;
-    }
-
-    public void setSensorId(Integer sensorId) {
-        this.sensorId = sensorId;
-    }
-// Getters and Setters
-    // ...
 }

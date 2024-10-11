@@ -9,9 +9,10 @@ public class Device {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "device_id")
     private Integer id;
 
-    @Column(name = "nameDevice")
+    @Column(name = "device_name")
     private String nameDevice;
 
     @Column(name = "location")

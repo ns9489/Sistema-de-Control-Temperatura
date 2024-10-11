@@ -1,4 +1,4 @@
-package com.TempControl.persistence.Repository;
+package com.TempControl.persistence;
 
 import com.TempControl.persistence.crud.AlertCrudRepository;
 import com.TempControl.persistence.entity.Alert;

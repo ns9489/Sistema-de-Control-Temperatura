@@ -3,9 +3,8 @@ package com.TempControl.domain.dto;
 public class DeviceDTO {
 
     private Integer id;
-    private String nameDevice;
+    private String device_name;
     private String location;
-    private String device;
 
     public Integer getId() {
         return id;
@@ -15,12 +14,12 @@ public class DeviceDTO {
         this.id = id;
     }
 
-    public String getNameDevice() {
-        return nameDevice;
+    public String getDevice_name() {
+        return device_name;
     }
 
-    public void setNameDevice(String nameDevice) {
-        this.nameDevice = nameDevice;
+    public void setDevice_name(String device_name) {
+        this.device_name = device_name;
     }
 
     public String getLocation() {
@@ -29,13 +28,5 @@ public class DeviceDTO {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public String getDevice() {
-        return device;
-    }
-
-    public void setDevice(String device) {
-        this.device = device;
     }
 }

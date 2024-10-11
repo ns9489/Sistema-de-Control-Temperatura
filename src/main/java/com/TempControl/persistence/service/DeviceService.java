@@ -2,8 +2,7 @@ package com.TempControl.persistence.service;
 
 import com.TempControl.domain.dto.DeviceDTO;
 import com.TempControl.persistence.entity.Device;
-import com.TempControl.persistence.mapper.DeviceMapper;
-import com.TempControl.persistence.Repository.DeviceRepository;
+import com.TempControl.persistence.DeviceRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

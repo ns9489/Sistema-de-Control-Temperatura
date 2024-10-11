@@ -3,8 +3,9 @@ package com.TempControl.domain.dto;
 public class SensorDTO {
 
     private Integer id;
-    private String modelo;
-    private String tipo;
+    private String model;
+    private String type;
+    private SensorDTO sensor;
 
     public Integer getId() {
         return id;
@@ -14,19 +15,27 @@ public class SensorDTO {
         this.id = id;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getModel() {
+        return model;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getTipo() {
-        return tipo;
+    public SensorDTO getSensor() {
+        return sensor;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setSensor(SensorDTO sensor) {
+        this.sensor = sensor;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

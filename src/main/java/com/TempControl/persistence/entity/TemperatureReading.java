@@ -8,6 +8,7 @@ public class TemperatureReading {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "reading_id")
     private Integer id;
 
     @Column(name = "temperature", nullable = false)
@@ -21,6 +22,7 @@ public class TemperatureReading {
     private Sensor sensor;
 
     // Getters and Setters
+
     public Integer getId() {
         return id;
     }

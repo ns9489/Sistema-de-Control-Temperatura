@@ -2,25 +2,33 @@ package com.TempControl.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "sensor")
 public class Sensor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sensor_id")
     private Integer id;
 
-    @Column(name = "modelo")
-    private String modelo;
+    @Column(name = "model")
+    private String model;
 
-    @Column(name = "tipo")
-    private String tipo;
+    @Column(name = "type")
+    private String type;
+
 
     @ManyToOne
     @JoinColumn(name = "device_id", nullable = false)
     private Device device;
 
-    // Getters and Setters
+    @OneToMany(mappedBy = "sensor")
+    private List <Alert> alerts;
+    @OneToMany(mappedBy = "sensor")
+    private List <TemperatureReading> TemperatureReadings;
+
     public Integer getId() {
         return id;
     }
@@ -29,20 +37,20 @@ public class Sensor {
         this.id = id;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getModel() {
+        return model;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getType() {
+        return type;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Device getDevice() {
@@ -51,5 +59,21 @@ public class Sensor {
 
     public void setDevice(Device device) {
         this.device = device;
+    }
+
+    public List<Alert> getAlerts() {
+        return alerts;
+    }
+
+    public void setAlerts(List<Alert> alerts) {
+        this.alerts = alerts;
+    }
+
+    public List<TemperatureReading> getTemperatureReadings() {
+        return TemperatureReadings;
+    }
+
+    public void setTemperatureReadings(List<TemperatureReading> temperatureReadings) {
+        TemperatureReadings = temperatureReadings;
     }
 }

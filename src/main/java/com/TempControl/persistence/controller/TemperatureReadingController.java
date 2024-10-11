@@ -1,7 +1,7 @@
 package com.TempControl.persistence.controller;
 
 import com.TempControl.persistence.entity.TemperatureReading;
-import com.TempControl.persistence.Repository.TemperatureReadingRepository;
+import com.TempControl.persistence.TemperatureReadingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

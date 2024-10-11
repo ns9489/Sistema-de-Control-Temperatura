@@ -1,4 +1,4 @@
-package com.TempControl.persistence.Repository;
+package com.TempControl.persistence;
 
 import com.TempControl.persistence.crud.TemperatureReadingCrudRepository;
 import com.TempControl.persistence.entity.TemperatureReading;

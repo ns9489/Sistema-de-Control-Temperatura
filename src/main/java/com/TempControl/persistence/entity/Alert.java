@@ -10,16 +10,14 @@ public class Alert {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name = "alert_id")
     private Integer id;
 
     @Column(name = "message")
     private String message;
 
-    @Column(name = "creationTime ")
+    @Column(name = "creation_time ")
     private String creationTime;
-
-    @Column(name = "deviceID")
-    private String location;
 
     @ManyToOne
     @JoinColumn(name = "device_id", nullable = false)
@@ -53,14 +51,6 @@ public class Alert {
         this.creationTime = creationTime;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public Device getDevice() {
         return device;
     }
@@ -76,6 +66,4 @@ public class Alert {
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
     }
-
-
 }

@@ -4,8 +4,8 @@ public class TemperatureReadingDTO {
 
     private Integer id;
     private String temperature;
-    private String reading_time;
-    private String sensor_id;
+    private String readingTime;
+    private SensorDTO sensor;
 
     public Integer getId() {
         return id;
@@ -23,19 +23,19 @@ public class TemperatureReadingDTO {
         this.temperature = temperature;
     }
 
-    public String getReading_time() {
-        return reading_time;
+    public String getReadingTime() {
+        return readingTime;
     }
 
-    public void setReading_time(String reading_time) {
-        this.reading_time = reading_time;
+    public void setReadingTime(String readingTime) {
+        this.readingTime = readingTime;
     }
 
-    public String getSensor_id() {
-        return sensor_id;
+    public SensorDTO getSensor() {
+        return sensor;
     }
 
-    public void setSensor_id(String sensor_id) {
-        this.sensor_id = sensor_id;
+    public void setSensor(SensorDTO sensor) {
+        this.sensor = sensor;
     }
 }
