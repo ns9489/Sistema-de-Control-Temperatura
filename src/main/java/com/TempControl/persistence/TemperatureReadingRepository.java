@@ -1,41 +1,53 @@
 package com.TempControl.persistence;
 
+import com.TempControl.domain.Repository.TemperatureReadingDomainRepository;
+import com.TempControl.domain.dto.TemperatureReadingDTO;
 import com.TempControl.persistence.crud.TemperatureReadingCrudRepository;
 import com.TempControl.persistence.entity.TemperatureReading;
+import com.TempControl.persistence.mapper.TemperatureReadingMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class TemperatureReadingRepository {
-    private final TemperatureReadingCrudRepository temperatureReadingCrudRepository;
+public class TemperatureReadingRepository implements TemperatureReadingDomainRepository {
+    @Autowired
+    private TemperatureReadingCrudRepository temperatureReadingCrudRepository;
 
-    public TemperatureReadingRepository(TemperatureReadingCrudRepository temperatureReadingCrudRepository) {
-        this.temperatureReadingCrudRepository = temperatureReadingCrudRepository;
+    @Autowired
+    private TemperatureReadingMapper temperatureReadingMapper;
+
+    @Override
+    public TemperatureReadingDTO save(TemperatureReadingDTO temperatureReadingDTO) {
+        TemperatureReading temperatureReading = temperatureReadingMapper.toTemperatureReading(temperatureReadingDTO);
+        return temperatureReadingMapper.toTemperatureReadingDTO(temperatureReadingCrudRepository.save(temperatureReading));
     }
 
-    public List<TemperatureReading> getAll() {
-        return (List<TemperatureReading>) temperatureReadingCrudRepository.findAll();
+    @Override
+    public Optional<TemperatureReadingDTO> getTemperatureReadingById(int id) {
+        return temperatureReadingCrudRepository.findById(id).map(temperatureReadingMapper::toTemperatureReadingDTO); // Corregido: nombre del mapeador
     }
 
-    public Optional<TemperatureReading> getTemperatureReadingByID(int id) {
-        return temperatureReadingCrudRepository.findById(id);
-    }
-
-    public TemperatureReading save(TemperatureReading temperatureReading) {
-        return temperatureReadingCrudRepository.save(temperatureReading);
-    }
-
-    public void delete(int id) {
-        temperatureReadingCrudRepository.deleteById(id);
-    }
-
-    public boolean existsTemperatureReading(int id) {
+    @Override
+    public boolean existsTemperatureReadingById(int id) {
         return temperatureReadingCrudRepository.existsById(id);
     }
 
+    @Override
+    public List<TemperatureReadingDTO> getAll() {
+        List<TemperatureReading> temperatureReadings = (List<TemperatureReading>) temperatureReadingCrudRepository.findAll(); // Corregido: nombre de variable
+        return temperatureReadingMapper.toTemperatureReadingDTOList(temperatureReadings);
+    }
+
+    @Override
     public long countAll() {
         return temperatureReadingCrudRepository.count();
+    }
+
+    @Override
+    public void deleteById(int id) {
+        temperatureReadingCrudRepository.deleteById(id);
     }
 }

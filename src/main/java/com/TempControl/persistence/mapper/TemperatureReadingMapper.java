@@ -12,9 +12,9 @@ import java.util.List;
     @Mapper(componentModel = "spring")
     public interface TemperatureReadingMapper {
         @Mappings({
-                @Mapping(source = "id", target = "reading_id"),
+                @Mapping(source = "id", target = "id"),
                 @Mapping(source = "temperature", target = "temperature"),
-                @Mapping(source = "readingTime", target = "reading_time"),
+                @Mapping(source = "readingTime", target = "readingTime"),
                 @Mapping(source = "sensor", target = "sensor")
         })
         TemperatureReadingDTO toTemperatureReadingDTO(TemperatureReading temperatureReading);

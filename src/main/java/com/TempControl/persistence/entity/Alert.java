@@ -2,8 +2,6 @@ package com.TempControl.persistence.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "alert")
 public class Alert {

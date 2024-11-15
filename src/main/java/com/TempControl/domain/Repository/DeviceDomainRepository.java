@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface DeviceDomainRepository {
     DeviceDTO save(DeviceDTO alertDTO);
     Optional<DeviceDTO> getDeviceById(int id);
-    boolean existsDeviceByI(int id);
+    boolean existsDeviceById(int id);
     List<DeviceDTO> getAll();
     long countAll();
     void deleteById(int id);

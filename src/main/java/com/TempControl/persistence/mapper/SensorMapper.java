@@ -12,10 +12,10 @@ import java.util.List;
     @Mapper(componentModel = "spring")
     public interface SensorMapper {
         @Mappings({
-                @Mapping(source = "id", target = "sensorID"),
+                @Mapping(source = "id", target = "id"),
                 @Mapping(source = "model", target = "model"),
                 @Mapping(source = "type", target = "type"),
-                @Mapping(source = "device", target = "device")
+                @Mapping(source = "sensor", target = "sensor")
         })
         SensorDTO toSensorDTO(Sensor sensor);
         List<SensorDTO> toSensorDTOList(List<Sensor> sensors);

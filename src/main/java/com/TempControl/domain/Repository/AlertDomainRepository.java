@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface AlertDomainRepository {
     AlertDTO save(AlertDTO alertDTO);
-    Optional <AlertDTO> getAlertById();
+    Optional <AlertDTO> getAlertById(int id);
     boolean existsAlertById(int id);
     List<AlertDTO>getAll();
     long countAll();
